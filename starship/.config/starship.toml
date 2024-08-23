@@ -1,0 +1,45 @@
+format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:iris) "
+palette = "rose-pine-moon"
+
+[palettes.rose-pine-moon]
+overlay = '#393552'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ea9a97'
+pine = '#3e8fb0'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+
+[directory]
+format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
+style = "bg:overlay fg:pine"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[fill]
+style = "fg:overlay"
+symbol = " "
+
+[git_branch]
+format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
+style = "bg:overlay fg:foam"
+symbol = ""
+
+[time]
+disabled = false
+format = "[](fg:overlay)[ $time ]($style)[](fg:overlay)"
+style = "bg:overlay fg:rose"
+time_format = "%H:%M"
+
+[username]
+disabled = false
+format = "[](fg:overlay)[ 󰧱 Kyari ]($style)[](fg:overlay)"
+show_always = true
+style_root = "bg:overlay fg:iris"
+style_user = "bg:overlay fg:iris"
