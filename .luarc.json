@@ -1,0 +1,11 @@
+{
+    "runtime.version": "Lua 5.4",
+    "diagnostics.globals": [
+        "highlight_under_cursor_ref",
+        "setup_keymaps",
+        "vim",
+        "local",
+        "require",
+        "ipairs"
+    ]
+}

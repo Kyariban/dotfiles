@@ -1,0 +1,4 @@
+node_modules
+karabiner/.config/karabiner/automatic_backups
+package.json
+yarn.lock

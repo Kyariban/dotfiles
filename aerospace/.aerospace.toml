@@ -1,0 +1,134 @@
+
+after-login-command = []
+after-startup-command = ['exec-and-forget sketchybar']
+start-at-login = true
+
+# Notify that WS changed
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  'sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+# Notify that focus changed
+on-focus-changed = ['exec-and-forget sketchybar --trigger front_app_switched']
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 24
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+key-mapping.preset = 'qwerty'
+
+
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 6
+outer.bottom = 6
+outer.top = 48
+outer.right = 6
+
+[mode.main.binding]
+
+# All possible keys:
+# - Letters.        a, b, c, ..., z
+# - Numbers.        0, 1, 2, ..., 9
+# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+# - F-keys.         f1, f2, ..., f20
+# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual
+#                   keypadMinus, keypadMultiply, keypadPlus
+# - Arrows.         left, down, up, right
+
+# All possible modifiers: cmd, alt, ctrl, shift
+
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-cmd-h = 'move left'
+alt-cmd-j = 'move down'
+alt-cmd-k = 'move up'
+alt-cmd-l = 'move right'
+
+
+alt-shift-1 = 'workspace 1'
+alt-shift-2 = 'workspace 2'
+alt-shift-3 = 'workspace 3'
+alt-shift-n = 'workspace N'
+alt-shift-e = 'workspace E'
+alt-shift-d = 'workspace D'
+alt-shift-c = 'workspace C'
+alt-shift-v = 'workspace 4'
+
+alt-cmd-shift-1 = 'move-node-to-workspace 1'
+alt-cmd-shift-2 = 'move-node-to-workspace 2'
+alt-cmd-shift-3 = 'move-node-to-workspace 3'
+alt-cmd-shift-n = 'move-node-to-workspace N'
+alt-cmd-shift-e = 'move-node-to-workspace E'
+alt-cmd-shift-d = 'move-node-to-workspace D'
+alt-cmd-shift-c = 'move-node-to-workspace C'
+alt-cmd-shift-v = 'move-node-to-workspace 4'
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+alt-shift-esc = 'mode service'
+
+[workspace-to-monitor-force-assignment]
+4 = '^built-in retina display$'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --reload']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+s = ['exec-and-forget sketchybar --bar hidden=false', 'mode main']
+h = ['exec-and-forget sketchybar --bar hidden=true', 'mode main']
+
+alt-h = ['join-with left', 'mode main']
+alt-j = ['join-with down', 'mode main']
+alt-k = ['join-with up', 'mode main']
+alt-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = "move-node-to-workspace E"
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = "move-node-to-workspace D"
+
+[[on-window-detected]]
+if.app-id = 'com.electron.dockerdesktop'
+run = "move-node-to-workspace C"
+
+[[on-window-detected]]
+if.app-id = 'com.sublimetext.4'
+run = "move-node-to-workspace N"

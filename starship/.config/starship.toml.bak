@@ -1,0 +1,84 @@
+format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
+palette = "everforest"
+
+[palettes.rosepine]
+overlay = '#393552'
+time = '#ea9a97'
+repo = '#3e8fb0'
+gitbranch = '#9ccfd8'
+username = '#c4a7e7'
+arrow = '#c4a7e7'
+
+[palettes.poimandres]
+overlay = '#303340'
+time = '#FAE4FC'
+repo = '#5DE4C7'
+gitbranch = '#89DDFF'
+username = '#FFFAC2'
+arrow = '#FFFAC2'
+
+[palettes.everforest]
+overlay = '#3D484D'
+time = '#7FBBB3'
+repo = '#A7C080'
+gitbranch = '#83C092'
+username = '#dbbc7f'
+arrow = '#d3c6aa'
+
+[palettes.nord]
+overlay = '#2E3440'
+time = '#A3BE8C'
+repo = '#88C0D0'
+gitbranch = '#8FBCBB'
+username = '#81A1C1'
+arrow = '#81A1C1'
+
+[palettes.catpuccin]
+overlay = '#2E3440'
+time = '#a6d189'
+repo = '#8caaee'
+gitbranch = '#ca9ee6'
+username = '#ea999c'
+arrow = '#ea999c'
+
+[palettes.tokyo]
+overlay = '#343B58'
+time = '#9ece6a'
+repo = '#7aa2f7'
+gitbranch = '#2ac3de'
+username = '#bb9af7'
+arrow = '#bb9af7'
+
+[directory]
+format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
+style = "bg:overlay fg:repo"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[fill]
+style = "fg:overlay"
+symbol = " "
+
+[git_branch]
+format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
+style = "bg:overlay fg:gitbranch"
+symbol = ""
+
+[time]
+disabled = false
+format = "[](fg:overlay)[ $time ]($style)[](fg:overlay)"
+style = "bg:overlay fg:time"
+time_format = "%H:%M"
+
+[username]
+disabled = false
+format = "[](fg:overlay)[ 󰖔 $user ]($style)[](fg:overlay)"
+show_always = true
+style_root = "bg:overlay fg:username"
+style_user = "bg:overlay fg:username"
