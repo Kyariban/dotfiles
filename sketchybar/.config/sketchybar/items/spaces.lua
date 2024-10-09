@@ -17,15 +17,13 @@ local currentWorkspaceWatcher = sbar.add("item", {
 
 local spaceConfigs = {
 	["1"] = { icon = icons.spaces.browser, name = "Browser" },
-	["2"] = { icon = icons.spaces.front, name = "Front" },
-	["3"] = { icon = icons.spaces.back, name = "Back" },
-	["4"] = { icon = icons.spaces.notes, name = "Notes" },
-	["8"] = { icon = icons.spaces.music, name = "Music" },
-	["T"] = { icon = icons.spaces.terminal, name = "Terminal" },
+	["2"] = { icon = icons.spaces.terminal, name = "Terminal" },
+	["3"] = { icon = icons.spaces.back, name = "IntelliJ" },
+	["4"] = { icon = icons.spaces.chat, name = "Chat" },
+	["N"] = { icon = icons.spaces.notes, name = "Notes" },
+	["E"] = { icon = icons.spaces.music, name = "Music" },
 	["D"] = { icon = icons.spaces.design, name = "Design" },
 	["C"] = { icon = icons.spaces.container, name = "Containers" },
-	["G"] = { icon = icons.spaces.gateway, name = "Gateway" },
-	["5"] = { icon = icons.spaces.chat, name = "Chat" },
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)

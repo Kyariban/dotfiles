@@ -1,18 +1,25 @@
-format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:iris) "
-palette = "rose-pine-moon"
+format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
+palette = "everforest"
 
-[palettes.rose-pine-moon]
+[palettes.rosepine]
 overlay = '#393552'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ea9a97'
-pine = '#3e8fb0'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
+time = '#ea9a97'
+repo = '#3e8fb0'
+gitbranch = '#9ccfd8'
+username = '#c4a7e7'
+arrow= '#c4a7e7'
+
+[palettes.everforest]
+overlay = '#3D484D'
+time = '#7FBBB3'
+repo = '#A7C080'
+gitbranch = '#83C092'
+username = '#dbbc7f'
+arrow='#d3c6aa'
 
 [directory]
 format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"
-style = "bg:overlay fg:pine"
+style = "bg:overlay fg:repo"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -28,18 +35,18 @@ symbol = " "
 
 [git_branch]
 format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay)"
-style = "bg:overlay fg:foam"
+style = "bg:overlay fg:gitbranch"
 symbol = ""
 
 [time]
 disabled = false
 format = "[](fg:overlay)[ $time ]($style)[](fg:overlay)"
-style = "bg:overlay fg:rose"
+style = "bg:overlay fg:time"
 time_format = "%H:%M"
 
 [username]
 disabled = false
-format = "[](fg:overlay)[ 󰧱 Kyari ]($style)[](fg:overlay)"
+format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay)"
 show_always = true
-style_root = "bg:overlay fg:iris"
-style_user = "bg:overlay fg:iris"
+style_root = "bg:overlay fg:username"
+style_user = "bg:overlay fg:username"

@@ -1,16 +1,16 @@
 local colors <const> = {
-	white = 0xffc6d0f5,
-	accent = 0xffc6d0f5,
+	white = 0xffd3c6aa,
+	accent = 0xffa7C080,
 	grey = 0xff7f8490,
 	transparent = 0x00000000,
 	bar = {
-		bg = 0xbb232634,
+		bg = 0xdd232a2e,
 		border = 0xff2c2e34,
 		y_offset = 6,
 		padding_left = 6,
 		padding_right = 6,
 		margin = 6,
-		corner_radius = 20,
+		corner_radius = 8,
 		height = 36,
 	},
 	popup = {

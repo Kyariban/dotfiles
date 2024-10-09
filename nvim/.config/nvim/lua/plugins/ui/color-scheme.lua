@@ -46,9 +46,14 @@ return {
 			transparent = true,
 		},
 	},
-	{ "sainnhe/everforest", lazy = false, priority = 1000, opts = {
-		transparent = true,
-	} },
+	{
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent_background_level = 1,
+		},
+	},
 	{
 		"sho-87/kanagawa-paper.nvim",
 		lazy = false,

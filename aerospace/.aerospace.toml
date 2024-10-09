@@ -68,24 +68,20 @@ alt-cmd-l = 'move right'
 alt-shift-1 = 'workspace 1'
 alt-shift-2 = 'workspace 2'
 alt-shift-3 = 'workspace 3'
-alt-shift-4 = 'workspace 4'
-alt-shift-8 = 'workspace 8'
-alt-shift-t = 'workspace T'
+alt-shift-n = 'workspace N'
+alt-shift-e = 'workspace E'
 alt-shift-d = 'workspace D'
 alt-shift-c = 'workspace C'
-alt-shift-g = 'workspace G'
-alt-shift-v = 'workspace 5'
+alt-shift-v = 'workspace 4'
 
 alt-cmd-shift-1 = 'move-node-to-workspace 1'
 alt-cmd-shift-2 = 'move-node-to-workspace 2'
 alt-cmd-shift-3 = 'move-node-to-workspace 3'
-alt-cmd-shift-4 = 'move-node-to-workspace 4'
-alt-cmd-shift-8 = 'move-node-to-workspace 8'
-alt-cmd-shift-t = 'move-node-to-workspace T'
+alt-cmd-shift-n = 'move-node-to-workspace N'
+alt-cmd-shift-e = 'move-node-to-workspace E'
 alt-cmd-shift-d = 'move-node-to-workspace D'
 alt-cmd-shift-c = 'move-node-to-workspace C'
-alt-cmd-shift-g = 'move-node-to-workspace G'
-alt-cmd-shift-v = 'move-node-to-workspace 5'
+alt-cmd-shift-v = 'move-node-to-workspace 4'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -93,7 +89,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-esc = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-5 = '^built-in retina display$'  
+4 = '^built-in retina display$'  
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --reload']
@@ -113,11 +109,11 @@ run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace 8"
+run = "move-node-to-workspace E"
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = "move-node-to-workspace 5"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
@@ -129,5 +125,5 @@ run = "move-node-to-workspace C"
 
 [[on-window-detected]]
 if.app-id = 'com.sublimetext.4'
-run = "move-node-to-workspace 4"
+run = "move-node-to-workspace N"
 
