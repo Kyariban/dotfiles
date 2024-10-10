@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
   "alpha-nvim": { "branch": "main", "commit": "bf3c8bb8c02ed3d9644cc5bbc48e2bdc39349cd7" },
+  "angular-schematics.nvim": { "branch": "main", "commit": "5bc7716bff50e16c07a84753a3a67a511ec40acc" },
   "angular-scripts.nvim": { "branch": "main", "commit": "0175385fdb7b43a7d996258bf10adba511159e76" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "better-escape.nvim": { "branch": "master", "commit": "bb197e51a91a635deb88630813c3bfc284413697" },

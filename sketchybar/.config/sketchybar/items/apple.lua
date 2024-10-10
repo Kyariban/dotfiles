@@ -4,7 +4,7 @@ sbar.add("item", { width = 5 })
 
 sbar.add("item", {
 	icon = {
-		string = icons.apple,
+		string = icons.tree,
 		padding_right = 8,
 		padding_left = 8,
 	},

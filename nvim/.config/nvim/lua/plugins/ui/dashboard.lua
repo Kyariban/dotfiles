@@ -5,14 +5,14 @@ return {
 		local alpha = require("alpha")
 		local dashboard = require("alpha.themes.dashboard")
 
-		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#87aaff" })
-		vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#c6d0f5" })
-		vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#87aaff" })
-		vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#c6d0f5" })
+		-- vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#87aaff" })
+		-- vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#c6d0f5" })
+		-- vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#87aaff" })
+		-- vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#c6d0f5" })
 
 		local heading = {
 			type = "text",
-			val = require("dashboard.banners")["pacman"],
+			val = require("dashboard.banners")["kroken"],
 			opts = {
 				position = "center",
 				hl = "AlphaHeader",
@@ -43,7 +43,7 @@ return {
 
 		local footing = {
 			type = "text",
-			val = "Kyari.Nvim",
+			val = "Caliban.Nvim",
 			opts = {
 				position = "center",
 				hl = "AlphaFooter",

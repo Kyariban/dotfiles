@@ -7,6 +7,8 @@ local icons = {
 		apple = "􀣺",
 		gear = "􀍟",
 		cpu = "􀫥",
+		doggo = "􂀇",
+		tree = "􁝰",
 		clipboard = "􀉄",
 		separator = "􀆓",
 
