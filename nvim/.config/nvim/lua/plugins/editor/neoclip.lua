@@ -61,6 +61,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>oc", "<cmd>Telescope neoclip<CR>", { desc = "Toggle Neoclip" })
+		vim.keymap.set("n", "<leader>oc", "<cmd>Telescope neoclip<CR>", { desc = "Open | Neoclip" })
 	end,
 }

@@ -116,7 +116,7 @@ return {
 	{
 		"zaldih/themery.nvim",
 		config = function()
-			vim.keymap.set("n", "<leader>ot", "<cmd>Themery <CR>", { desc = "Open Themery" })
+			vim.keymap.set("n", "<leader>ot", "<cmd>Themery <CR>", { desc = "Open | Themery" })
 			require("themery").setup({
 				themes = {
 					"rose-pine",

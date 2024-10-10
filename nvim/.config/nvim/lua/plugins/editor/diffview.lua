@@ -7,7 +7,7 @@ return {
 			else
 				vim.cmd("DiffviewClose")
 			end
-		end, { desc = "Open Diffview", silent = true })
+		end, { desc = "Open | Diffview", silent = true })
 	end,
 	event = "BufReadPost",
 }
