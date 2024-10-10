@@ -3,8 +3,28 @@ return {
 		"folke/which-key.nvim",
 		event = "VimEnter",
 		config = function()
+			local icons = {
+				java = "",
+				code = "",
+				debug = "",
+				harpoon = "󰛢",
+				search = "",
+				breakpoint = "",
+				log = "󰦨",
+				test = "󰙨",
+				angular = "",
+				workspace = "",
+				panes = "",
+				toggle = "",
+				open = "󰠜",
+				format = "󰉠",
+				trouble = "",
+				git = "",
+			}
 			require("which-key").setup({
 				icons = {
+					group = "",
+					colors = false,
 					mappings = vim.g.have_nerd_font,
 					-- If you are using a Nerd Font: set icons.keys to an empty table which will use the
 					-- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
@@ -43,23 +63,22 @@ return {
 
 			-- Document existing key chains
 			require("which-key").add({
-				{ "<leader>c", group = "Code" },
-				{ "<leader>d", group = "Debug" },
-				{ "<leader>r", group = "Rename" },
-				{ "<leader>h", group = "Harpoon" },
-				{ "<leader>s", group = "Search" },
-				{ "<leader>b", group = "Breakpoints" },
-				{ "<leader>J", group = "Java" },
-				{ "<leader>Jl", group = "Java | Logs" },
-				{ "<leader>Jt", group = "Java | Test" },
-				{ "<leader>A", group = "Angular" },
-				{ "<leader>w", group = "Workspace" },
-				{ "<leader>p", group = "Panes" },
-				{ "<leader>t", group = "Toggle" },
-				{ "<leader>o", group = "Open" },
-				{ "<leader>f", group = "Format" },
-				{ "<leader>x", group = "Trouble" },
-				{ "<leader>H", group = "Hunk Git", mode = { "n", "v" } },
+				{ "<leader>c", group = "Code", icon = icons.code },
+				{ "<leader>d", group = "Debug", icon = icons.debug },
+				{ "<leader>h", group = "Harpoon", icon = icons.harpoon },
+				{ "<leader>s", group = "Search", icon = icons.search },
+				{ "<leader>b", group = "Breakpoints", icon = icons.breakpoint },
+				{ "<leader>J", group = "Java", icon = icons.java },
+				{ "<leader>Jl", group = "Java | Logs", icon = icons.log },
+				{ "<leader>Jt", group = "Java | Test", icon = icons.test },
+				{ "<leader>A", group = "Angular", icon = icons.angular },
+				{ "<leader>w", group = "Workspace", icon = icons.workspace },
+				{ "<leader>p", group = "Panes", icon = icons.panes },
+				{ "<leader>t", group = "Toggle", icon = icons.toggle },
+				{ "<leader>o", group = "Open", icon = icons.open },
+				{ "<leader>f", group = "Format", icon = icons.format },
+				{ "<leader>x", group = "Trouble", icon = icons.trouble },
+				{ "<leader>H", group = "Hunk Git", mode = { "n", "v" }, icon = icons.git },
 			})
 		end,
 	},

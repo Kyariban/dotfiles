@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- [[ Setup the nerd font
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Config ]]
 require("config.globals")
