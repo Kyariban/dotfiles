@@ -1,17 +1,16 @@
 -- [[ Basic Keymaps ]]
 local keymap = vim.keymap
 -- General keymaps
-keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Save" })
-keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit" })
-keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Save All" })
-keymap.set("n", "<leader>wQ", ":wqa<CR>", { desc = "Save All and Quit" })
-keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "Force Quit" })
+keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Workspace | Save file" })
+keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Workspace | Save all files" })
+keymap.set("n", "<leader>wq", ":wqa<CR>", { desc = "Workspace | Save all files and quit" })
+keymap.set("n", "<leader>wf", ":q!<CR>", { desc = "Workspace | Force quit" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Exit insert mode with JK
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("i", "jk", "<ESC>")
 
 -- Primeagen config, good stuff in there
 keymap.set("n", "J", "mzJ`z")
@@ -20,23 +19,18 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
-keymap.set("x", "<leader>p", [["_dP]])
-keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-keymap.set("n", "<leader>Y", [["+Y]])
-keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
-keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- Diagnostic keymaps
 keymap.set("n", "<leader>oq", vim.diagnostic.setloclist, { desc = "Open | Quickfix" })
 keymap.set("n", "<leader>ol", ":!open <c-r><c-a><CR>", { desc = "Open | Link under cursor" })
 
 -- window management
-keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Window | Split vertically" })
-keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Window | Split horizontally" })
-keymap.set("n", "<leader>we", "<C-w>=", { desc = "Window | Equalize Splits" })
-keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Window | Close Split" })
+keymap.set("n", "<leader>pv", "<C-w>v", { desc = "Panes | Split vertically" })
+keymap.set("n", "<leader>ph", "<C-w>s", { desc = "Panes | Split horizontally" })
+keymap.set("n", "<leader>pe", "<C-w>=", { desc = "Panes | Equalize Splits" })
+keymap.set("n", "<leader>px", "<cmd>close<CR>", { desc = "Panes | Close Split" })
 
 -- Vim-maximizer
 keymap.set("n", "<leader>tm", ":MaximizerToggle<CR>", { desc = "Toggle | Maximizer" })
@@ -63,49 +57,49 @@ keymap.set("n", "<leader>Jls", "<cmd>JavaRunnerSwitchLogs<cr>", { desc = "Java |
 keymap.set("n", "<leader>Jlt", "<cmd>JavaRunerToggleLogs<cr>", { desc = "Java | Toggle logs" })
 
 -- Breakpoints
-keymap.set("n", "<leader>bt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Breakpoint toggle" })
+keymap.set("n", "<leader>bt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Breakpoint | Toggle" })
 keymap.set(
 	"n",
 	"<leader>bc",
 	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-	{ desc = "Breakpoint with condition" }
+	{ desc = "Breakpoint | With condition" }
 )
 keymap.set(
 	"n",
 	"<leader>bl",
 	"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
-	{ desc = "Breakpoint log point" }
+	{ desc = "Breakpoint | Log point" }
 )
-keymap.set("n", "<leader>bx", "<cmd>lua require'dap'.clear_breakpoints()<cr>", { desc = "Breakpoint Clear All" })
-keymap.set("n", "<leader>sb", "<cmd>Telescope dap list_breakpoints<cr>", { desc = "Search Breakpoints (Telescope)" })
+keymap.set("n", "<leader>bx", "<cmd>lua require'dap'.clear_breakpoints()<cr>", { desc = "Breakpoint | Clear All" })
+keymap.set("n", "<leader>sb", "<cmd>Telescope dap list_breakpoints<cr>", { desc = "Search | Breakpoints" })
 
 -- Plugins development shortcuts
-keymap.set("n", "<leader>xf", "<cmd>source %<CR>", { desc = "E[x]ecute the current [f]ile" })
+keymap.set("n", "<leader>cx", "<cmd>source %<CR>", { desc = "Code | Execute current file" })
 
 -- Debugging
-keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = "" })
-keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>", { desc = "" })
-keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>", { desc = "" })
-keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>", { desc = "" })
+keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = "Debug | Continue" })
+keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>", { desc = "Debug | Step Over" })
+keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>", { desc = "Debug | Step Into" })
+keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>", { desc = "Debug | Step Out" })
 keymap.set("n", "<leader>dd", function()
 	require("dap").disconnect()
 	require("dapui").close()
-end, { desc = "" })
+end, { desc = "Debug | Disconnect" })
 keymap.set("n", "<leader>dt", function()
 	require("dap").terminate()
 	require("dapui").close()
-end, { desc = "" })
-keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = "" })
-keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = "" })
+end, { desc = "Debug | Terminate" })
+keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = "Debug | Repl Toggle ?" })
+keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = "Debug | Run Last" })
 keymap.set("n", "<leader>di", function()
 	require("dap.ui.widgets").hover()
-end, { desc = "" })
+end, { desc = "Debug | Widgets" })
 keymap.set("n", "<leader>d?", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
-end, { desc = "" })
-keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>", { desc = "" })
-keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>", { desc = "" })
+end, { desc = "Debug | Scopes" })
+keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>", { desc = "Debug | Telescope DAP frames" })
+keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>", { desc = "Debug | Telescope DAP commands" })
 keymap.set("n", "<leader>de", function()
 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
-end, { desc = "" })
+end, { desc = "Debug | Telescope DAP diagnostics" })

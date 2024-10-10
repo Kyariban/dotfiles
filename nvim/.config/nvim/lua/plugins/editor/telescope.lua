@@ -58,17 +58,12 @@ return {
 				})
 			end, { desc = "[S]earch [/] in Open Files" })
 
-			vim.keymap.set("n", "<leader>/", function()
-				builtin.current_buffer_fuzzy_find()
-			end, { desc = "[/] Fuzzily search in current buffer" })
-
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
 
 			-- Less used Mappings
 			vim.keymap.set("n", "<leader>si", builtin.lsp_incoming_calls, { desc = "[S]earch [I]ncoming calls" })
-			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 		end,

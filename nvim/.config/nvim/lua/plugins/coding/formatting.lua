@@ -24,13 +24,13 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ormat [F]ile" })
+		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format | File" })
 		vim.keymap.set({ "n", "v" }, "<leader>fr", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 4000,
 			})
-		end, { desc = "[F]ormat file or [R]ange" })
+		end, { desc = "Format | Range" })
 	end,
 }
