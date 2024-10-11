@@ -15,4 +15,15 @@ return {
 			vim.keymap.set("n", "<leader>Ag", "<cmd>NgGenerate<CR>", { desc = "Angular | Generate schematics" })
 		end,
 	},
+	{
+		"Kyariban/i18n-cmp.nvim",
+		enabled = false,
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+		},
+		opts = {
+			files = { "fr.json" },
+			filetypes = { "typescript", "html" },
+		},
+	},
 }

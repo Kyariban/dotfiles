@@ -19,6 +19,7 @@ local servers = {
 	graphql = {},
 	cssls = {},
 	jsonls = {},
+	lemminx = {},
 	ts_ls = {},
 	angularls = {},
 	lua_ls = {
