@@ -8,6 +8,7 @@ return {
 			formatters_by_ft = {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+				java = { "google-java-format" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
@@ -23,6 +24,15 @@ return {
 				timeout_ms = 5000,
 			},
 		})
+
+		conform.formatters.google_java_format = {
+			args = {
+				"--aosp",
+				"--replace",
+				"--xml-rules",
+				"~/dotfiles/config/GoogleStyleWork.xml",
+			},
+		}
 
 		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format | File" })
 		vim.keymap.set({ "n", "v" }, "<leader>fr", function()

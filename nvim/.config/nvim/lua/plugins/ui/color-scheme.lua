@@ -111,7 +111,14 @@ return {
 			transparent_bg = true,
 		},
 	},
-
+	{
+		"tiagovla/tokyodark.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent_background = true,
+		},
+	},
 	-- Each colorscheme has to be declared here. Themery allows for quick switch between themes.
 	{
 		"zaldih/themery.nvim",
@@ -131,6 +138,7 @@ return {
 					"terafox",
 					"carbonfox",
 					"tokyonight",
+					"tokyodark",
 					"catppuccin",
 					"gruvbox",
 					"nord",

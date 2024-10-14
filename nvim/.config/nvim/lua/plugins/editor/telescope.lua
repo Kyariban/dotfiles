@@ -34,6 +34,7 @@ return {
 
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
+			pcall(require("telescope").load_extension, "git_file_history")
 
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
@@ -66,6 +67,12 @@ return {
 			vim.keymap.set("n", "<leader>si", builtin.lsp_incoming_calls, { desc = "[S]earch [I]ncoming calls" })
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+
+			vim.keymap.set("n", "<leader>sH", function()
+				require("telescope").extensions.git_file_history.git_file_history()
+			end, { desc = "[S]earch Git file [H]istory" })
+
+			vim.keymap.set("n", "<leader>sc", ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
 		end,
 	},
 }

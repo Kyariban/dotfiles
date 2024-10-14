@@ -10,7 +10,8 @@ return {
 	},
 	{ "Bilal2453/luvit-meta", lazy = true },
 	{
-		"hrsh7th/nvim-cmp",
+		"iguanacucumber/magazine.nvim",
+		name = "nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			{
@@ -20,6 +21,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"rafamadriz/friendly-snippets",
+			"f3fora/cmp-spell",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-buffer",
@@ -91,6 +93,8 @@ return {
 					{ name = "buffer" }, -- text within current buffer
 					{ name = "path" }, -- file system paths
 					{ name = "lazydev", group_index = 0 },
+					{ name = "spell" },
+					{ name = "cmdline" },
 				}),
 				window = {
 					completion = cmp.config.window.bordered(),
@@ -104,6 +108,25 @@ return {
 						ellipsis_char = "...",
 					}),
 				},
+			})
+
+			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+
+			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{ name = "cmdline" },
+				}),
+				matching = { disallow_symbol_nonprefix_matching = false },
 			})
 		end,
 	},

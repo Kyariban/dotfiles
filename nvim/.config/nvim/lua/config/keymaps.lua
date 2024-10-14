@@ -6,6 +6,12 @@ keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Workspace | Save all files" }
 keymap.set("n", "<leader>wq", ":wqa<CR>", { desc = "Workspace | Save all files and quit" })
 keymap.set("n", "<leader>wf", ":q!<CR>", { desc = "Workspace | Force quit" })
 
+-- Spelling
+vim.api.nvim_set_keymap("n", "<leader>ts", ":setlocal spell!<CR>", { desc = "Toggle | Spell check" })
+vim.api.nvim_set_keymap("n", "<leader>mf", "z=", { noremap = true, silent = true, desc = "Spell | Word list" })
+vim.api.nvim_set_keymap("n", "<leader>ma", "zg", { desc = "Spell | Add word to dictionnary" })
+vim.api.nvim_set_keymap("n", "<leader>mr", "zw", { desc = "Spell | Remove word from dictionnary" })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -32,26 +38,29 @@ keymap.set("n", "<leader>ph", "<C-w>s", { desc = "Panes | Split horizontally" })
 keymap.set("n", "<leader>pe", "<C-w>=", { desc = "Panes | Equalize Splits" })
 keymap.set("n", "<leader>px", "<cmd>close<CR>", { desc = "Panes | Close Split" })
 
+-- Git
+keymap.set("n", "<leader>gl", ":G log<CR>", { noremap = true, silent = true, desc = "Git | Show log" })
+keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR>", { noremap = true, silent = true, desc = "Git | Diff split" })
+
 -- Vim-maximizer
 keymap.set("n", "<leader>tm", ":MaximizerToggle<CR>", { desc = "Toggle | Maximizer" })
 
 -- Java Testing
-keymap.set("n", "<leader>Jtc", function()
-	if vim.bo.filetype == "java" then
-		require("jdtls").test_class()
-	end
-end, { desc = "Java | Test Class" })
+keymap.set("n", "<leader>Jtm", "<cmd>JavaTestRunCurrentMethod<cr>", { desc = "Java | Test current method" })
+keymap.set("n", "<leader>Jtc", "<cmd>JavaTestRunCurrentClass<cr>", { desc = "Java | Test current class" })
+keymap.set("n", "<leader>Jdm", "<cmd>JavaTestDebugCurrentMethod<cr>", { desc = "Java | Debug current method" })
+keymap.set("n", "<leader>Jdc", "<cmd>JavaTestDebugCurrentClass<cr>", { desc = "Java | Debug current class" })
+keymap.set("n", "<leader>Jtv", "<cmd>JavaTestViewLastReport<cr>", { desc = "Java | View last report" })
 
-keymap.set("n", "<leader>Jtm", function()
-	if vim.bo.filetype == "java" then
-		require("jdtls").test_nearest_method()
-	end
-end, { desc = "Java | Test Method" })
+-- Java Debug
+keymap.set("n", "<leader>Jds", "<cmd>JavaDapConfig<cr>", { desc = "Java | Dap settings" })
 
 -- Java General
+keymap.set("n", "<leader>Jp", "<cmd>JavaProfile<cr>", { desc = "Java | Profile" })
 keymap.set("n", "<leader>Jb", "<cmd>JavaBuildBuildWorkspace<cr>", { desc = "Java | Build Workspace" })
 keymap.set("n", "<leader>Jc", "<cmd>JavaBuildCleanWorkspace<cr>", { desc = "Java | Clean Workspace" })
 keymap.set("n", "<leader>Jr", "<cmd>JavaRunnerRunMain<cr>", { desc = "Java | Run Main" })
+keymap.set("n", "<leader>Jdk", "<cmd>JavaSettingsChangeRuntime<cr>", { desc = "Java | Change runtime" })
 keymap.set("n", "<leader>Js", "<cmd>JavaRunnerStopMain<cr>", { desc = "Java | Stop Main" })
 keymap.set("n", "<leader>Jls", "<cmd>JavaRunnerSwitchLogs<cr>", { desc = "Java | Switch logs" })
 keymap.set("n", "<leader>Jlt", "<cmd>JavaRunerToggleLogs<cr>", { desc = "Java | Toggle logs" })

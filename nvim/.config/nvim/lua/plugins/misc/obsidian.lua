@@ -7,6 +7,12 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	opts = {
+		ui = { enable = false },
+		templates = {
+			folder = "Templates",
+			date_format = "%d-%m-%Y",
+			time_format = "%H:%M",
+		},
 		workspaces = {
 			{
 				name = "Nexus",
