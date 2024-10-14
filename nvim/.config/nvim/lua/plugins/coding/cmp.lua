@@ -94,7 +94,6 @@ return {
 					{ name = "path" }, -- file system paths
 					{ name = "lazydev", group_index = 0 },
 					{ name = "spell" },
-					{ name = "cmdline" },
 				}),
 				window = {
 					completion = cmp.config.window.bordered(),

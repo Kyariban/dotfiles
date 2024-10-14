@@ -44,6 +44,14 @@ keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR>", { noremap = true, silent = tru
 
 -- Vim-maximizer
 keymap.set("n", "<leader>tm", ":MaximizerToggle<CR>", { desc = "Toggle | Maximizer" })
+keymap.set("n", "<leader>tz", ":ZenMode<CR>", { desc = "Toggle | Zen Mode" })
+keymap.set("n", "<leader>tr", function()
+	if vim.wo.relativenumber then
+		vim.wo.relativenumber = false
+	else
+		vim.wo.relativenumber = true
+	end
+end, { noremap = true, silent = true, desc = "Toggle | Relative line numbers" })
 
 -- Java Testing
 keymap.set("n", "<leader>Jtm", "<cmd>JavaTestRunCurrentMethod<cr>", { desc = "Java | Test current method" })
