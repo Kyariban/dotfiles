@@ -60,6 +60,8 @@ alias lg='lazygit'
 alias tma='tmux attach -d -t'
 alias tls='tmux ls'
 alias tmop='~/.local/scripts/tmux-sessionizer.sh'
+alias mci="mvn clean install -DskipTests"
+alias gci="gradle clean build -x test"
 
 if command -v code-insiders &> /dev/null; then
   alias code="code-insiders"
@@ -69,8 +71,8 @@ function code() {
   command code "$@"
 }
 
-if [ -f ~/.zsh_private_alias ]; then
-    source ~/.zsh_private_alias 
+if [ -f ~/.zshrc_private ]; then
+    source ~/.zshrc_private 
 fi
     
 source $(dirname $(gem which colorls))/tab_complete.sh

@@ -71,7 +71,7 @@ keymap.set("n", "<leader>Jr", "<cmd>JavaRunnerRunMain<cr>", { desc = "Java | Run
 keymap.set("n", "<leader>Jdk", "<cmd>JavaSettingsChangeRuntime<cr>", { desc = "Java | Change runtime" })
 keymap.set("n", "<leader>Js", "<cmd>JavaRunnerStopMain<cr>", { desc = "Java | Stop Main" })
 keymap.set("n", "<leader>Jls", "<cmd>JavaRunnerSwitchLogs<cr>", { desc = "Java | Switch logs" })
-keymap.set("n", "<leader>Jlt", "<cmd>JavaRunerToggleLogs<cr>", { desc = "Java | Toggle logs" })
+keymap.set("n", "<leader>Jlt", "<cmd>JavaRunnerToggleLogs<cr>", { desc = "Java | Toggle logs" })
 keymap.set("n", "<leader>Jm", "<cmd>Maven<cr>", { desc = "Java | Maven" })
 
 -- Breakpoints

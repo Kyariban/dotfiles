@@ -17,6 +17,7 @@ local servers = {
 	rust_analyzer = {},
 	html = {},
 	graphql = {},
+	bashls = {},
 	cssls = {},
 	jsonls = {},
 	lemminx = {},
@@ -119,12 +120,17 @@ local config = function()
 	})
 	mason_tool_installer.setup({
 		ensure_installed = {
-			"prettier", -- prettier formatter
-			"stylua", -- lua formatter
-			"black", -- python formatter
+			"prettier",
+			"prettierd",
+			"stylua",
+			"black",
 			"pylint",
 			"eslint_d",
+			"shfmt",
+			"google-java-format",
 		},
+		auto_update = true,
+		run_on_start = true,
 	})
 
 	vim.api.nvim_command("MasonToolsInstall")
