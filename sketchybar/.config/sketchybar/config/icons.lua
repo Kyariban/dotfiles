@@ -8,7 +8,6 @@ local icons = {
 		gear = "􀍟",
 		cpu = "􀫥",
 		doggo = "􂀇",
-		tree = "􁝰",
 		clipboard = "􀉄",
 		separator = "􀆓",
 

@@ -1,23 +1,23 @@
 local icons = require("config.icons")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 
 local whitelist = { ["Spotify"] = true }
 
-local media_cover = sbar.add("item", {
-	position = "center",
-	background = {
-		image = {
-			string = "media.artwork",
-			scale = 0.85,
-		},
-		color = colors.transparent,
-	},
-	label = { drawing = false },
-	icon = { drawing = false },
-	drawing = false,
-	updates = true,
-})
-
+-- local media_cover = sbar.add("item", {
+-- 	position = "center",
+-- 	background = {
+-- 		image = {
+-- 			string = "media.artwork",
+-- 			scale = 0.85,
+-- 		},
+-- 		color = colors.transparent,
+-- 	},
+-- 	label = { drawing = false },
+-- 	icon = { drawing = false },
+-- 	drawing = false,
+-- 	updates = true,
+-- })
+--
 local media_artist = sbar.add("item", {
 	position = "center",
 	drawing = false,
@@ -49,7 +49,7 @@ local media_title = sbar.add("item", {
 })
 
 local media_bracket = sbar.add("bracket", "media.bracket", {
-	media_cover.name,
+	-- media_cover.name,
 	media_artist.name,
 	media_title.name,
 }, {
@@ -81,12 +81,12 @@ local function animate_detail(detail)
 	end)
 end
 
-media_cover:subscribe("media_change", function(env)
+media_title:subscribe("media_change", function(env)
 	if whitelist[env.INFO.app] then
 		local drawing = (env.INFO.state == "playing")
 		media_artist:set({ drawing = drawing, label = env.INFO.artist })
 		media_title:set({ drawing = drawing, label = env.INFO.title })
-		media_cover:set({ drawing = drawing })
+		-- media_cover:set({ drawing = drawing })
 
 		if drawing then
 			animate_detail(true)
@@ -100,9 +100,9 @@ media_bracket:subscribe("mouse.clicked", function(env)
 	media_bracket:set({ popup = { drawing = "toggle" } })
 end)
 
-media_cover:subscribe("mouse.clicked", function(env)
-	media_bracket:set({ popup = { drawing = "toggle" } })
-end)
+-- media_cover:subscribe("mouse.clicked", function(env)
+-- 	media_bracket:set({ popup = { drawing = "toggle" } })
+-- end)
 media_title:subscribe("mouse.clicked", function(env)
 	media_bracket:set({ popup = { drawing = "toggle" } })
 end)

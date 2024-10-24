@@ -119,6 +119,11 @@ return {
 			transparent_background = true,
 		},
 	},
+	{
+		"aktersnurra/no-clown-fiesta.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	-- Each colorscheme has to be declared here. Themery allows for quick switch between themes.
 	{
 		"zaldih/themery.nvim",
@@ -127,6 +132,7 @@ return {
 			require("themery").setup({
 				themes = {
 					"rose-pine",
+					"no-clown-fiesta",
 					"poimandres",
 					"dracula",
 					"dracula-soft",

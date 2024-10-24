@@ -1,7 +1,6 @@
 local constants = require("constants")
-local settings = require("config.settings")
 local icons = require("config.icons")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 
 sbar.add("event", constants.events.SWAP_MENU_AND_SPACES)
 

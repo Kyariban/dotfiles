@@ -1,4 +1,4 @@
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 local icons = require("config.icons")
 
 local popup_width = 250

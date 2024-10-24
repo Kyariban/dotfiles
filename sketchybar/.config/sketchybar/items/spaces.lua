@@ -1,6 +1,6 @@
 local constants = require("constants")
 local appIcons = require("config.app_icons")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 local icons = require("config.icons")
 
 local spaces = {}

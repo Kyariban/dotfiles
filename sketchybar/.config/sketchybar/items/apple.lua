@@ -1,10 +1,10 @@
-local icons = require("config.icons")
+local theme = require("config.current_colors")
 
 sbar.add("item", { width = 5 })
 
 sbar.add("item", {
 	icon = {
-		string = icons.tree,
+		string = theme.icon,
 		padding_right = 8,
 		padding_left = 8,
 	},

@@ -1,5 +1,5 @@
 format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
-palette = "everforest"
+palette = "nord"
 
 [palettes.rosepine]
 overlay = '#393552'
@@ -9,6 +9,14 @@ gitbranch = '#9ccfd8'
 username = '#c4a7e7'
 arrow= '#c4a7e7'
 
+[palettes.poimandres]
+overlay = '#303340'
+time = '#FAE4FC'
+repo = '#5DE4C7'
+gitbranch = '#89DDFF'
+username = '#FFFAC2'
+arrow= '#FFFAC2'
+
 [palettes.everforest]
 overlay = '#3D484D'
 time = '#7FBBB3'
@@ -16,6 +24,14 @@ repo = '#A7C080'
 gitbranch = '#83C092'
 username = '#dbbc7f'
 arrow='#d3c6aa'
+
+[palettes.nord]
+overlay = '#2E3440'
+time = '#A3BE8C'
+repo = '#88C0D0'
+gitbranch = '#8FBCBB'
+username = '#81A1C1'
+arrow='#81A1C1'
 
 [directory]
 format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)"

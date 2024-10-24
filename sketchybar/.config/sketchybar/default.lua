@@ -1,5 +1,5 @@
 local settings = require("config.settings")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 local fonts = require("config.fonts")
 
 -- Equivalent to the --default domain

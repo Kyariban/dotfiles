@@ -1,6 +1,6 @@
 local constants = require("constants")
 local settings = require("config.settings")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 
 local maxItems = 15
 local menuItems = {}

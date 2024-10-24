@@ -1,7 +1,7 @@
 local fonts = require("config.fonts")
 local icons = require("config.icons")
 local constants = require("constants")
-local colors = require("config.colors")
+local colors = require("config.current_colors")
 local appIcons = require("config.app_icons")
 
 local frontApps = {}

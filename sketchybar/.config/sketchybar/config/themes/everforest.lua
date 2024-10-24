@@ -23,6 +23,7 @@ local colors <const> = {
 	},
 	bg1 = 0xd322212c,
 	bg2 = 0xff302c45,
+	icon = "􁝰",
 }
 
 return colors
