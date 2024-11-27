@@ -1,5 +1,5 @@
 format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
-palette = "catpuccin"
+palette = "everforest"
 
 [palettes.rosepine]
 overlay = '#393552'
