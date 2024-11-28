@@ -76,6 +76,7 @@ return {
 				{ "<leader>Jd", group = "Java | Debug", icon = icons.debug },
 				{ "<leader>Jl", group = "Java | Logs", icon = icons.log },
 				{ "<leader>Jt", group = "Java | Test", icon = icons.test },
+				{ "<leader>JR", group = "Java | Refactor", icon = icons.refactor },
 				{ "<leader>O", group = "Obsidian", icon = icons.obsidian },
 				{ "<leader>P", group = "Panes", icon = icons.panes },
 				{ "<leader>b", group = "Breakpoints", icon = icons.breakpoint },

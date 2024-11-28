@@ -128,14 +128,12 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
 PATH="$PATH":"$HOME/.local/scripts/"
 PATH="$PATH":"$HOME/.local/scripts/colorscheme-switcher/"
 PATH="$PATH":"$HOME/.local/scripts/toggle-transparency.sh/"
 PATH="$PATH":"$HOME/.work_scripts/"
+export PATH="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home/bin/:$PATH"
 bindkey -s ^f "tmux-sessionizer\n"
 
 # Load Angular CLI autocompletion.
