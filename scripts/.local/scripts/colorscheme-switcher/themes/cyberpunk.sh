@@ -16,7 +16,7 @@ update_starship_palette() {
 }
 
 update_sketchybar_theme() {
-  local new_theme="Cyberpunk Neon"
+  local new_theme="$1"
   if [[ -f "$SKETCHYBAR_COLORS_CONFIG" ]]; then
     sed -i.bak -E "s/require\(\"config\.themes\.[^\"]*\"\)/require(\"config.themes.$new_theme\")/" "$SKETCHYBAR_COLORS_CONFIG"
     echo "SketchyBar theme updated to: $new_theme"
@@ -39,4 +39,3 @@ update_kitty_theme() {
 
 update_sketchybar_theme "cyberdream"
 update_starship_palette "cyberdream"
-update_kitty_theme "Cyberpunk Neon"

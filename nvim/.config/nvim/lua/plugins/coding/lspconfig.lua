@@ -37,33 +37,6 @@ local servers = {
 	},
 }
 
--- [[ Add highlights for the word under the cursor ]]
-function highlight_under_cursor_ref(event)
-	local client = vim.lsp.get_client_by_id(event.data.client_id)
-	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-		local highlight_augroup = vim.api.nvim_create_augroup("kyari-lsp-highlight", { clear = false })
-		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-			buffer = event.buf,
-			group = highlight_augroup,
-			callback = vim.lsp.buf.document_highlight,
-		})
-
-		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-			buffer = event.buf,
-			group = highlight_augroup,
-			callback = vim.lsp.buf.clear_references,
-		})
-
-		vim.api.nvim_create_autocmd("LspDetach", {
-			group = vim.api.nvim_create_augroup("kyari-lsp-detach", { clear = true }),
-			callback = function(event2)
-				vim.lsp.buf.clear_references()
-				vim.api.nvim_clear_autocmds({ group = "kyari-lsp-highlight", buffer = event2.buf })
-			end,
-		})
-	end
-end
-
 -- [[ LSP Keymaps ]]
 function setup_keymaps(event)
 	local map = function(keys, func, desc, mode)
@@ -93,7 +66,6 @@ local config = function()
 		group = vim.api.nvim_create_augroup("kyari-lsp-attach", {}),
 		callback = function(event)
 			setup_keymaps(event)
-			highlight_under_cursor_ref(event)
 		end,
 	})
 

@@ -50,7 +50,7 @@ opt.splitbelow = true
 opt.inccommand = "split"
 
 -- Show which line your cursor is on
-opt.cursorline = true
+opt.cursorline = false
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
 
