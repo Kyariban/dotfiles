@@ -14,7 +14,7 @@ font_size 16.0
 hide_window_decorations yes
 
 background_opacity 0.8
-background_blur 32
+background_blur 64
 auto_reload_config yes
 copy_on_select yes
 

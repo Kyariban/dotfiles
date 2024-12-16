@@ -51,6 +51,12 @@ return {
 			},
 			settings = {
 				java = {
+					format = {
+						settings = {
+							profile = "nvim gestion",
+							url = "file:///Users/thibaultleboulch/.config/nvim/lang-config/GoogleStyle.xml",
+						},
+					},
 					configuration = {
 						runtimes = {
 							{

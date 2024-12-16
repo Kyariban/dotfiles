@@ -127,7 +127,6 @@ local config = function()
 			"pylint",
 			"eslint_d",
 			"shfmt",
-			"google-java-format",
 		},
 		auto_update = true,
 		run_on_start = true,

@@ -1,5 +1,5 @@
 format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
-palette = "everforest"
+palette = "cyberdream"
 
 [palettes.rosepine]
 overlay = '#393552'
@@ -24,6 +24,15 @@ repo = '#A7C080'
 gitbranch = '#83C092'
 username = '#dbbc7f'
 arrow = '#d3c6aa'
+
+
+[palettes.cyberdream]
+overlay = '#1e2124'
+time = '#bd5eff'
+repo = '#5ef1ff'
+gitbranch = '#5ea1ff'
+username = '#5eff6c'
+arrow = '#5eff6c'
 
 [palettes.nord]
 overlay = '#2E3440'
@@ -78,7 +87,7 @@ time_format = "%H:%M"
 
 [username]
 disabled = false
-format = "[](fg:overlay)[ 󰖔 $user ]($style)[](fg:overlay)"
+format = "[](fg:overlay)[ 󰘯 $user ]($style)[](fg:overlay)"
 show_always = true
 style_root = "bg:overlay fg:username"
 style_user = "bg:overlay fg:username"
