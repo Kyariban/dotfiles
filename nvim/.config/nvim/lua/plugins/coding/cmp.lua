@@ -18,12 +18,12 @@ return {
 				"L3MON4D3/LuaSnip",
 				version = "v2.*",
 			},
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
+			{ "iguanacucumber/mag-nvim-lsp", name = "cmp-nvim-lsp", opts = {} },
+			{ "iguanacucumber/mag-nvim-lua", name = "cmp-nvim-lua" },
+			{ "iguanacucumber/mag-buffer", name = "cmp-buffer" },
+			{ "iguanacucumber/mag-cmdline", name = "cmp-cmdline" },
 			"rafamadriz/friendly-snippets",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-buffer",
+			"https://codeberg.org/FelipeLema/cmp-async-path",
 			"onsails/lspkind.nvim",
 		},
 		config = function()
@@ -43,9 +43,6 @@ return {
 			luasnip.filetype_extend("java", { "javadoc" })
 			luasnip.filetype_extend("c", { "cdoc" })
 			luasnip.filetype_extend("cpp", { "cppdoc" })
-			luasnip.filetype_extend("php", { "phpdoc" })
-			luasnip.filetype_extend("kotlin", { "kdoc" })
-			luasnip.filetype_extend("ruby", { "rdoc" })
 			luasnip.filetype_extend("sh", { "shelldoc" })
 
 			cmp.setup({
@@ -90,7 +87,7 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- snippets
 					{ name = "buffer" }, -- text within current buffer
-					{ name = "path" }, -- file system paths
+					{ name = "async_path" }, -- file system paths
 					{ name = "lazydev", group_index = 0 },
 					-- { name = "spell" },
 				}),
@@ -98,7 +95,15 @@ return {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
-
+				performance = {
+					debounce = 60,
+					throttle = 30,
+					fetching_timeout = 500,
+					filtering_context_budget = 3,
+					confirm_resolve_timeout = 80,
+					async_budget = 1,
+					max_view_entries = 50,
+				},
 				-- configure lspkind for vs-code like pictograms in completion menu
 				formatting = {
 					format = lspkind.cmp_format({

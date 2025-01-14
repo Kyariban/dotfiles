@@ -7,7 +7,7 @@ keymap.set("n", "<leader>wq", ":wqa<CR>", { desc = "Workspace | Save all files a
 keymap.set("n", "<leader>wf", ":q!<CR>", { desc = "Workspace | Force quit" })
 
 -- Spelling
-vim.api.nvim_set_keymap("n", "<leader>ts", ":setlocal spell!<CR>", { desc = "Toggle | Spell check" })
+vim.api.nvim_set_keymap("n", "<leader>tw", ":setlocal spell!<CR>", { desc = "Toggle | Word check" })
 vim.api.nvim_set_keymap("n", "<leader>mf", "z=", { noremap = true, silent = true, desc = "Spell | Word list" })
 vim.api.nvim_set_keymap("n", "<leader>ma", "zg", { desc = "Spell | Add word to dictionnary" })
 vim.api.nvim_set_keymap("n", "<leader>mr", "zw", { desc = "Spell | Remove word from dictionnary" })

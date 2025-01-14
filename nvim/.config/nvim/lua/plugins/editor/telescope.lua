@@ -23,12 +23,23 @@ return {
 					},
 				},
 				defaults = {
-					layout_config = {
-						vertical = {
-							width = 0.75,
+					mappings = {
+						n = {
+							["d"] = require("telescope.actions").delete_buffer,
+							["q"] = require("telescope.actions").close,
 						},
 					},
-					path_display = { "smart" },
+					layout_config = {
+						vertical = {
+							width = 0.95,
+						},
+						horizontal = {
+							width = 0.95,
+						},
+					},
+					path_display = {
+						"smart",
+					},
 				},
 			})
 
@@ -37,7 +48,12 @@ return {
 			pcall(require("telescope").load_extension, "git_file_history")
 
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search | Files" })
+			vim.keymap.set(
+				"n",
+				"<leader>sf",
+				":Telescope find_files workspace=CWD theme=ivy<cr>",
+				{ desc = "Search | Files" }
+			)
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Search | current Word" })
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search | by Grep" })
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search | Diagnostics" })
@@ -77,6 +93,13 @@ return {
 				"<leader>sc",
 				":Telescope git_bcommits<CR>",
 				{ desc = "Search | commits", noremap = true, silent = true }
+			)
+
+			vim.keymap.set(
+				"n",
+				"<leader>sb",
+				":Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<CR>",
+				{ desc = "Search | Buffers", noremap = true, silent = true }
 			)
 
 			vim.keymap.set("n", "<leader>st", function()

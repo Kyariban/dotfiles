@@ -61,28 +61,6 @@ if command -v bat &>/dev/null; then
   alias cata='bat --show-all --paging=never'
 fi
 
-# Zsh Vi Mode
-# https://github.com/jeffreytse/zsh-vi-mode
-if [ -f "$(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" ]; then
-  source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-  # Following 4 lines modify the escape key to `jk`
-  ZVM_VI_ESCAPE_BINDKEY=jk
-  ZVM_VI_INSERT_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
-  ZVM_VI_VISUAL_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
-  ZVM_VI_OPPEND_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
-
-  function zvm_after_lazy_keybindings() {
-    zvm_bindkey vicmd 'gh' beginning-of-line
-    zvm_bindkey vicmd 'gl' end-of-line
-  }
-
-  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-  ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
-
-  # Source .fzf.zsh so that the ctrl+r bindkey is given back fzf
-  zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
-fi
 
 eval "$(pyenv init --path)"
 alias lc='colorls -A --sd'
@@ -133,6 +111,7 @@ PATH="$PATH":"$HOME/.local/scripts/"
 PATH="$PATH":"$HOME/.local/scripts/colorscheme-switcher/"
 PATH="$PATH":"$HOME/.local/scripts/toggle-transparency.sh/"
 PATH="$PATH":"$HOME/.work_scripts/"
+. "$HOME/.cargo/env"
 export PATH="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home/bin/:$PATH"
 bindkey -s ^f "tmux-sessionizer\n"
 

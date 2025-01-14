@@ -19,6 +19,26 @@ return {
 					require("neo-tree.command").execute({ action = "close" })
 				end,
 			},
+			{
+				event = "neo_tree_buffer_enter",
+				handler = function()
+					vim.cmd("setlocal wrap") -- Activer le wrap pour les noms longs
+				end,
+			},
+		},
+		window = {
+			width = 80,
+		},
+		default_component_configs = {
+			file_size = {
+				enabled = false,
+			},
+			last_modified = {
+				enabled = false,
+			},
+			created = {
+				enabled = false,
+			},
 		},
 		filesystem = {
 			filtered_items = {

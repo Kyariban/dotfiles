@@ -18,6 +18,7 @@ local items <const> = {
 	WIFI = "widgets.wifi",
 	BATTERY = "widgets.battery",
 	CALENDAR = "widgets.calendar",
+	MEDIA = "media",
 }
 
 local aerospace <const> = {

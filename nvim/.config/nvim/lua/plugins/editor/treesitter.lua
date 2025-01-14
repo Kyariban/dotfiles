@@ -16,6 +16,7 @@ return {
 				"lua",
 				"luadoc",
 				"markdown",
+				"rust",
 				"markdown_inline",
 				"comment",
 				"query",

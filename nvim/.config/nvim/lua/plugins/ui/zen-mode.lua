@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/zen-mode.nvim",
-		enabled = true,
+		enabled = false,
 		opts = {
 			window = {
 				backdrop = 1,

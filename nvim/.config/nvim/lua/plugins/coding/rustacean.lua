@@ -1,6 +1,6 @@
 return {
 	"mrcjkb/rustaceanvim",
-	enabled = false,
+	enabled = true,
 	version = "^5",
 	lazy = false,
 }

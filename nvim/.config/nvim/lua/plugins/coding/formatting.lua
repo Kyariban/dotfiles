@@ -13,6 +13,7 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
+				rust = { "rustfmt" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettierd" },
@@ -26,7 +27,7 @@ return {
 				},
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = false,
 				exclude = {
 					"java",
 				},
@@ -45,11 +46,7 @@ return {
 			conform.format()
 		end, { desc = "Format | File" })
 		vim.keymap.set({ "n", "v" }, "<leader>fr", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 4000,
-			})
+			conform.format()
 		end, { desc = "Format | Range" })
 	end,
 }
