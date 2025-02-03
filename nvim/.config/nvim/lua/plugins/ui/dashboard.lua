@@ -7,7 +7,7 @@ return {
 
 		local heading = {
 			type = "text",
-			val = require("dashboard.banners")["owl"],
+			val = require("dashboard.banners")["imperium"],
 			opts = {
 				position = "center",
 				hl = "AlphaFooter",

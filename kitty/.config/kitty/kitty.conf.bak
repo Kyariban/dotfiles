@@ -1,8 +1,8 @@
 # BEGIN_KITTY_THEME
-# Everforest Dark Medium
+# Nord
 include current-theme.conf
 # END_KITTY_THEME
-include themes/cyberdream.conf
+# include themes/cyberdream.conf
 dynamic_background_opacity yes
 allow_remote_control yes
 font_family MesloLGS Nerd Font Mono 

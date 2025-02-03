@@ -1,2 +1,2 @@
-local theme = require("config.themes.cyberdream")
+local theme = require("config.themes.nord")
 return theme
