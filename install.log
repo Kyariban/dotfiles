@@ -1,0 +1,9 @@
+[12:45:35 2025-02-05] FETCHING Version 2.38.9
+[12:45:36 2025-02-05] CREATING /Users/thibaultleboulch/.spicetify
+[12:45:36 2025-02-05] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.38.9/spicetify-2.38.9-darwin-arm64.tar.gz
+[12:45:36 2025-02-05] EXTRACTING /Users/thibaultleboulch/.spicetify/spicetify.tar.gz
+[12:45:36 2025-02-05] SETTING EXECUTABLE PERMISSIONS TO /Users/thibaultleboulch/.spicetify/spicetify
+[12:45:36 2025-02-05] REMOVING /Users/thibaultleboulch/.spicetify/spicetify.tar.gz
+[12:45:36 2025-02-05] APPENDING /Users/thibaultleboulch/.spicetify to PATH in /Users/thibaultleboulch/.zshrc
+[12:45:36 2025-02-05] spicetify v2.38.9 was installed successfully to /Users/thibaultleboulch/.spicetify
+[12:45:36 2025-02-05] Run 'spicetify --help' to get started

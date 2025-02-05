@@ -1,13 +1,13 @@
 format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:arrow) "
-palette = "everforest"
+palette = "rosepine"
 
 [palettes.rosepine]
-overlay = '#393552'
-time = '#ea9a97'
-repo = '#3e8fb0'
+overlay = '#26233a'
 gitbranch = '#9ccfd8'
-username = '#c4a7e7'
-arrow = '#c4a7e7'
+repo = '#c4a7e7'
+time = '#31748f'
+username = '#ebbcba'
+arrow = '#ebbcba'
 
 [palettes.poimandres]
 overlay = '#303340'

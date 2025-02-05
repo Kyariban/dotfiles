@@ -1,10 +1,11 @@
+---@diagnostic disable: missing-fields
 return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon",
+				variant = "main",
 				styles = {
 					transparency = false,
 				},
@@ -31,14 +32,6 @@ return {
 		end,
 	},
 	{
-		"ellisonleao/gruvbox.nvim",
-		config = function()
-			require("gruvbox").setup({
-				transparent_mode = true,
-			})
-		end,
-	},
-	{
 		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
@@ -54,12 +47,6 @@ return {
 		opts = {
 			transparent_background_level = 1,
 		},
-	},
-	{
-		"sho-87/kanagawa-paper.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = { transparent = true },
 	},
 	{
 		"shaunsingh/nord.nvim",
@@ -121,19 +108,9 @@ return {
 		},
 	},
 	{
-		"aktersnurra/no-clown-fiesta.nvim",
+		"shaunsingh/moonlight.nvim",
 		lazy = false,
 		priority = 1000,
-	},
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = true,
-		priority = 1000,
-		opts = function()
-			return {
-				transparent = true,
-			}
-		end,
 	},
 	{
 		"olimorris/onedarkpro.nvim",
@@ -155,16 +132,13 @@ return {
 					"eldritch",
 					"everforest",
 					"fluoromachine",
-					"gruvbox",
-					"kanagawa-paper",
+					"moonlight",
 					"nightfox",
-					"no-clown-fiesta",
 					"nord",
 					"nordfox",
 					"onedark",
 					"poimandres",
 					"rose-pine",
-					"solarized-osaka",
 					"terafox",
 					"tokyodark",
 					"tokyonight",

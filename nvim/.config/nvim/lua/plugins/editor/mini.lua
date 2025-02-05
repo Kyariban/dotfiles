@@ -3,6 +3,8 @@ return {
 		"echasnovski/mini.nvim",
 		config = function()
 			require("mini.ai").setup({ n_lines = 500 })
+			require("mini.move").setup()
+			require("mini.splitjoin").setup()
 			require("mini.surround").setup({
 				custom_surroundings = nil,
 				highlight_duration = 500,

@@ -1,9 +1,9 @@
 return {
 	"aaronik/treewalker.nvim",
+	enabled = true,
 	opts = {
 		highlight = true,
 		highlight_duration = 250,
-
 		highlight_group = "CursorLine",
 	},
 	keys = {

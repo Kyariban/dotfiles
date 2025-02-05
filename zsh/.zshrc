@@ -117,3 +117,5 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+export PATH=$PATH:/Users/thibaultleboulch/.spicetify
