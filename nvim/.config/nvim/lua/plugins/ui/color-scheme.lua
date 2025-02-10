@@ -5,9 +5,11 @@ return {
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = "main",
+				highlight_groups = {
+					Visual = { bg = "#ebbcba" },
+				},
 				styles = {
-					transparency = false,
+					transparency = true,
 				},
 			})
 		end,

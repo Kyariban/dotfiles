@@ -1,2 +1,2 @@
-local theme = require("config.themes.everforest")
+local theme = require("config.themes.rosepine")
 return theme

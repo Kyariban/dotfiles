@@ -1,5 +1,5 @@
 # BEGIN_KITTY_THEME
-# Everforest Dark Medium
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
 # include themes/cyberdream.conf
@@ -11,6 +11,8 @@ italic_font auto
 bold_italic_font auto
 
 font_size 16.0
+cursor #ebbcba
+cursor_text_color #191724
 
 hide_window_decorations yes
 

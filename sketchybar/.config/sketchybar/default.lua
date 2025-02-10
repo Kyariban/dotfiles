@@ -30,6 +30,7 @@ sbar.default({
 		height = 28,
 		corner_radius = 5,
 		border_width = 2,
+		blur_radius = 50,
 		image = {
 			corner_radius = 9,
 			border_color = colors.border_color,

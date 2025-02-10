@@ -99,6 +99,7 @@ return {
 				{ "<leader>s", group = "Search", icon = icons.search },
 				{ "<leader>t", group = "Toggle", icon = icons.toggle },
 				{ "<leader>T", group = "Timer", icon = icons.timer },
+				{ "<leader>u", group = "User preferences", icon = icons.toggle },
 				{ "<leader>w", group = "Workspace", icon = icons.workspace },
 				{ "<leader>x", group = "Trouble", icon = icons.trouble },
 			})
