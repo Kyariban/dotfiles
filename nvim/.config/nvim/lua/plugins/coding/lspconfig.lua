@@ -43,13 +43,8 @@ function setup_keymaps(event)
 		mode = mode or "n"
 		vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
 	end
-
-	map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-	map("gR", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-	map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 	map("<leader>rn", vim.lsp.buf.rename, "Refactoring | Rename")
 	map("<leader>ca", vim.lsp.buf.code_action, "Code | Actions", { "n", "x" })
-	map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 end
 
 -- [[ Main config ]]

@@ -5,46 +5,6 @@ return {
 	config = function()
 		local conform = require("conform")
 
-		local function format_hunks()
-			local ignore_filetypes = { "lua" }
-
-			local format = require("conform").format
-			if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
-				format({ lsp_fallback = false, timeout_ms = 500 })
-				return
-			end
-
-			local hunks = require("gitsigns").get_hunks()
-			if hunks == nil then
-				return
-			end
-
-			local function format_range()
-				if next(hunks) == nil then
-					return
-				end
-				local hunk = nil
-				while next(hunks) ~= nil and (hunk == nil or hunk.type == "delete") do
-					hunk = table.remove(hunks)
-				end
-
-				if hunk ~= nil and hunk.type ~= "delete" then
-					local start = hunk.added.start
-					local last = start + hunk.added.count
-					-- nvim_buf_get_lines uses zero-based indexing -> subtract from last
-					local last_hunk_line = vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
-					local range = { start = { start, 0 }, ["end"] = { last - 1, last_hunk_line:len() } }
-					format({ range = range, async = true, lsp_fallback = false }, function()
-						vim.defer_fn(function()
-							format_range()
-						end, 1)
-					end)
-				end
-			end
-
-			format_range()
-		end
-
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { "prettier" },
@@ -53,7 +13,6 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				java = { "google-java-format" },
 				rust = { "rustfmt" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
@@ -61,16 +20,20 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 			},
-			formatters = {
-				["google-java-format"] = {
-					command = "google-java-format", -- Commande pour exécuter google-java-format
-					args = { "-" }, -- Le tiret (-) permet de formater le fichier dans le flux standard
-					stdin = true, -- Utiliser l'entrée standard pour la commande
+			format_options = {
+				google_java_format = {
+					extra_args = { "--aosp" }, -- Exemple d'argument supplémentaire
+					config_file = "~/dotfiles/nvim/.config/nvim/lang-config/GoogleStyleSquadGestion.xml", -- Chemin vers votre fichier de config
 				},
 			},
-			format_on_save = function()
-				format_hunks()
-			end,
+			format_on_save = {
+				lsp_fallback = false,
+				exclude = {
+					"java",
+				},
+				async = false,
+				timeout_ms = 5000,
+			},
 		})
 
 		vim.api.nvim_set_keymap(

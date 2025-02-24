@@ -1,6 +1,7 @@
 return {
 	{
 		"Kyariban/angular-scripts.nvim",
+		enabled = false, --TODO: Fix this plugin to use pickers instead
 		config = function()
 			local angularScripts = require("angular-scripts")
 			vim.keymap.set("n", "<leader>Ar", function()

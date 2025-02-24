@@ -22,11 +22,5 @@ return {
 			":Refactor extract_block_to_file",
 			{ desc = "Refactoring | Extract block to file" }
 		)
-
-		require("telescope").load_extension("refactoring")
-
-		vim.keymap.set({ "n", "x" }, "<leader>rr", function()
-			require("telescope").extensions.refactoring.refactors()
-		end, { desc = "Refactoring | Pick refactor" })
 	end,
 }
